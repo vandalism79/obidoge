@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=ObiDoge Core
+Comment=Connect to the ObiDoge P2P Network
+Exec=obidoge-qt %u
+Terminal=false
+Type=Application
+Icon=obidoge128
+MimeType=x-scheme-handler/obidoge;
+Categories=Office;Finance;
+StartupWMClass=ObiDoge-qt
