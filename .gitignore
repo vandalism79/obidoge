@@ -1,0 +1,62 @@
+
+# ---- ObiDoge: build outputs / generated ----
+/build-*/
+/dist/
+
+# Autotools / make
+Makefile
+Makefile.in
+/aclocal.m4
+/autom4te.cache/
+/config.log
+/config.status
+/configure
+/depcomp
+/install-sh
+/missing
+/compile
+/ltmain.sh
+/libtool
+/m4/*.m4
+/.deps/
+/*.o
+/*.lo
+/*.la
+/*.a
+/*.Po
+/*.Plo
+
+# Qt build outputs
+src/qt/Makefile
+src/qt/.deps/
+src/qt/.moc/
+src/qt/moc_*
+src/qt/qrc_*
+src/qt/ui_*
+src/qt/obidoge-qt
+
+# secp256k1 build outputs (vendored subdir)
+src/secp256k1/Makefile
+src/secp256k1/.libs/
+src/secp256k1/src/.deps/
+src/secp256k1/src/.dirstamp
+src/secp256k1/config.log
+src/secp256k1/config.status
+src/secp256k1/libtool
+src/secp256k1/gen_context
+src/secp256k1/gen_context.o
+src/secp256k1/src/ecmult_static_context.h
+src/secp256k1/src/libsecp256k1-config.h
+src/secp256k1/libsecp256k1.*
+src/secp256k1/src/libsecp256k1_la-*
+
+# Binaries (do not commit)
+src/obidoged
+src/obidoge-cli
+src/obidoge-tx
+
+
+# build outputs
+src/obidoged
+src/obidoge-cli
+src/obidoge-tx
