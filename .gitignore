@@ -86,3 +86,31 @@ src/obidoge-tx
 src/secp256k1/src/ecmult_static_context.h
 src/secp256k1/src/libsecp256k1-config.h
 src/secp256k1/libsecp256k1.pc
+
+# --- build outputs / artifacts ---
+src/*.a
+src/*.la
+src/*.lo
+src/*.o
+src/obidoged
+src/obidoge-cli
+src/obidoge-tx
+src/qt/Makefile
+src/qt/.deps/
+src/qt/.libs/
+src/.deps/
+src/.libs/
+src/secp256k1/**/Makefile
+src/secp256k1/**/config.log
+src/secp256k1/**/config.status
+src/secp256k1/**/libtool
+src/secp256k1/**/.deps/
+src/secp256k1/**/.libs/
+autom4te.cache/
+**/autom4te.cache/
+
+# --- release/package folders (keep these OUT of git) ---
+dist/
+release/
+release-final/
+obidoge-release/
