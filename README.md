@@ -1,63 +1,104 @@
-ObiDoge Core integration/staging tree
-===========================================
+ObiDoge Core
+============
 
-What is ObiDoge?
-----------------------
+ObiDoge Core is the reference full-node implementation for the ObiDoge (OBD)
+blockchain network.
 
-ObiDoge is a fork of Litecoin supporting SHA256 PoW and Hive Mining. For full details, as well as prebuilt binaries for Windows, Mac and Linux, please visit our website at https://litecoinca.sh.
+It is responsible for block validation, peer-to-peer networking, transaction
+relay, and maintaining the canonical distributed ledger.
 
-ObiDoge Core is the full node software that makes up the backbone of the OBD network.
+This repository contains the complete source code for building ObiDoge Core
+from source on supported platforms.
 
-License
--------
+---
 
-ObiDoge Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
-information or see https://opensource.org/licenses/MIT.
+## What is ObiDoge?
 
-Development Process
--------------------
+ObiDoge (OBD) is an independent Layer-1 cryptocurrency with its own blockchain,
+consensus rules, and network identity.
 
-The `master` branch is regularly built and tested, but is not guaranteed to be
-completely stable. [Tags](https://github.com/obidoge-project/obidoge/tags) are created
-regularly to indicate new official, stable release versions of ObiDoge Core.
+Key characteristics:
 
-The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
+- Consensus: Proof-of-Work only
+- Algorithm: MinotaurX (CPU-friendly PoW)
+- Block Time: ~60 seconds
+- Supply: Fixed supply with scheduled halvings
+- Premine: None
+- ASIC Resistance: Yes
 
-The developer [mailing list](https://groups.google.com/forum/#!forum/obidoge-dev)
-should be used to discuss complicated or controversial changes before working
-on a patch set.
+ObiDoge is not a token and not a smart-contract platform. It runs its own
+standalone blockchain with independent parameters, genesis block, and release
+cycle.
 
-Developer IRC can be found on Freenode at #obidoge-dev.
+ObiDoge Core is the software that nodes run to participate in the network.
 
-Testing
--------
+---
 
-Testing and code review is the bottleneck for development; we get more pull
-requests than we can review and test on short notice. Please be patient and help out by testing
-other people's pull requests, and remember this is a security-critical project where any mistake might cost people
-lots of money.
+## Repository Structure
 
-### Automated Testing
+This repository contains:
 
-Developers are strongly encouraged to write [unit tests](src/test/README.md) for new code, and to
-submit new unit tests for old code. Unit tests can be compiled and run
-(assuming they weren't disabled in configure) with: `make check`. Further details on running
-and extending unit tests can be found in [/src/test/README.md](/src/test/README.md).
+- Full source code for ObiDoge Core
+- Build scripts and configuration files
+- Consensus, networking, wallet, RPC, and Qt GUI components
+- Documentation specific to ObiDoge
 
-There are also [regression and integration tests](/test), written
-in Python, that are run automatically on the build server.
-These tests can be run (if the [test dependencies](/test) are installed) with: `test/functional/test_runner.py`
+Runtime binaries and release artifacts are not stored in the git history and
+are provided separately on the official release pages.
 
-The Travis CI system makes sure that every pull request is built for Windows, Linux, and OS X, and that unit/sanity tests are run automatically.
+---
 
-### Manual Quality Assurance (QA) Testing
+## Building
 
-Changes should be tested by somebody other than the developer who wrote the
-code. This is especially important for large or high-risk changes. It is useful
-to add a test plan to the pull request description if testing the changes is
-not straightforward.
+Build instructions for supported platforms are provided in:
 
-Translations
-------------
+doc/INSTALL.md
 
-Any translation corrections or expansions are welcomed as GitHub pull requests.
+Berkeley DB 4.8 is required for wallet support where applicable.
+
+---
+
+## Documentation
+
+Project-specific documentation is located in the doc/ directory:
+
+doc/
+├── INSTALL.md
+├── NETWORK.md
+└── RELEASE-NOTES.md
+
+All documentation in this repository applies only to ObiDoge and contains
+no upstream Litecoin or Bitcoin references.
+
+---
+
+## License
+
+ObiDoge Core is released under the terms of the MIT License.
+
+See the file COPYING or visit:
+https://opensource.org/licenses/MIT
+
+---
+
+## Development Notes
+
+- The default branch represents active development
+- Tagged releases correspond to official published versions
+- Consensus-critical changes are handled conservatively
+
+This is a security-critical project. Code review and testing are essential.
+
+---
+
+## Translations
+
+Translation updates and improvements are welcome via pull requests.
+
+---
+
+## Official Resources
+
+Website: https://obidoge.xyz  
+Block Explorer: https://explorer.obidoge.xyz  
+Source Code: https://github.com/obidoge-project/obidoge
