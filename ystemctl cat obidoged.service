@@ -1,9 +1,0 @@
-[0;1;32m●[0m obidoged.service - ObiDoge Full Node Daemon
-   Loaded: loaded (/etc/systemd/system/obidoged.service; enabled; vendor preset: enabled)
-   Active: [0;1;32mactive (running)[0m since Tue 2025-12-30 22:51:33 UTC; 10s ago
- Main PID: 10052 (obidoged)
-    Tasks: 17 (limit: 4653)
-   CGroup: /system.slice/obidoged.service
-           └─10052 /home/van/obidoge/src/obidoged -datadir=/home/van/.obidoge -conf=/home/van/.obidoge/obidoge.conf -daemon=0
-
-Dec 30 22:51:33 obinode1 systemd[1]: Started ObiDoge Full Node Daemon.
