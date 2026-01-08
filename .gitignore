@@ -60,3 +60,29 @@ src/obidoge-tx
 src/obidoged
 src/obidoge-cli
 src/obidoge-tx
+
+# ---- build outputs / autotools ----
+src/obidoged
+src/obidoge-cli
+src/obidoge-tx
+
+**/.libs/
+**/.deps/
+**/*.o
+**/*.lo
+**/*.la
+**/*.a
+**/*.Po
+**/*.Plo
+**/*.dirstamp
+**/Makefile
+**/Makefile.in
+**/libtool
+**/config.log
+**/config.status
+**/autom4te.cache/
+
+# secp256k1 generated artifacts
+src/secp256k1/src/ecmult_static_context.h
+src/secp256k1/src/libsecp256k1-config.h
+src/secp256k1/libsecp256k1.pc
