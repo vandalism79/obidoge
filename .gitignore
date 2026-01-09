@@ -114,3 +114,53 @@ dist/
 release/
 release-final/
 obidoge-release/
+
+# ---- build outputs (never commit) ----
+**/.deps/
+**/.libs/
+**/.dirstamp
+**/*.Po
+**/*.Plo
+**/*.o
+**/*.lo
+**/*.la
+**/*.a
+**/*.so
+**/*.so.*
+**/*.dll
+**/*.exe
+config.log
+config.status
+Makefile
+
+# depends build outputs
+depends/*-w64-mingw32/
+depends/built/
+depends/work/
+depends/sources/
+
+
+# ---- build outputs (never commit) ----
+**/.deps/
+**/.libs/
+**/.dirstamp
+**/*.Po
+**/*.Plo
+**/*.o
+**/*.lo
+**/*.la
+**/*.a
+**/*.so
+**/*.so.*
+**/*.dll
+**/*.exe
+config.log
+config.status
+Makefile
+
+# depends build outputs
+depends/*-w64-mingw32/
+depends/built/
+depends/work/
+depends/sources/
+
