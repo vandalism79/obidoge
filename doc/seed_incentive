@@ -1,0 +1,142 @@
+# 🧾 ObiDoge Node Verification Guide
+
+This guide explains how to **cryptographically verify ownership of an ObiDoge node** using `signmessage`.
+
+Verification proves that the **same operator controls**:
+- an **OBD wallet key**, and
+- a **specific public network node** (hostname or IP)
+
+Verified nodes may be **eligible for incentives** and may be **listed as trusted infrastructure** for the ObiDoge network.
+
+---
+
+## ℹ️ About This Process
+
+- This verification is **off-chain**
+- It does **not** modify consensus
+- It does **not** grant block rewards, staking rights, or governance privileges
+
+The process exists solely to prove **operator identity and node control**.
+
+---
+
+## ✅ Requirements
+
+You must have:
+
+- `obidoged` running
+- Access to `obidoge-cli`
+- Wallet enabled (`disablewallet=0`)
+- A **legacy (P2PKH)** OBD address (**required**)
+
+---
+
+## ⚠️ Important Address Note
+
+**ObiDoge (0.16-era) only supports message signing with legacy addresses.**
+
+The following address types **will fail**:
+- SegWit
+- P2SH
+- Bech32
+
+✅ You **must** use a **legacy (P2PKH)** address.
+
+---
+
+## 🔹 Step 1 — Confirm Wallet Access
+
+obidoge-cli getwalletinfo
+If a JSON response is returned, your wallet is enabled.
+
+🔹 Step 2 — Create a Legacy Signing Address (Required)
+Copy code
+LEGACY=$(obidoge-cli getnewaddress "node-verification" "legacy")
+echo "$LEGACY"
+Example output:
+
+Copy code
+oLMVzdy92Kq1YWyZ6CgmYYWKvSfSYQ4bYV
+📌 This address should be used only for identity verification.
+
+🔹 Step 3 — Confirm the Address Is Signable
+Copy code
+obidoge-cli validateaddress "$LEGACY"
+You must see:
+
+"ismine": true
+
+"isscript": false
+
+"iswitness": false
+
+❌ If "isscript": true, generate a new legacy address.
+
+🔹 Step 4 — Choose a Node Identifier
+(Choose one)
+
+Option A — Hostname (recommended)
+Copy code
+seed01.obidoge.xyz
+Option B — Static Public IP
+Copy code
+162.196.40.170
+Rules
+Use only one identifier
+
+Identifier must be publicly reachable
+
+❌ Private IPs are not allowed:
+
+192.168.x.x
+
+10.x.x.x
+
+If the identifier changes, the node must re-verify
+
+🔹 Step 5 — Sign the Verification Message
+Replace <NODE_IDENTIFIER> with your chosen hostname or IP.
+
+Copy code
+NODE="<NODE_IDENTIFIER>"
+MSG="OBD_NODE_VERIFICATION: I operate node $NODE"
+SIG=$(obidoge-cli signmessage "$LEGACY" "$MSG")
+echo "$SIG"
+🔹 Step 6 — Verify Locally (Strongly Recommended)
+Copy code
+obidoge-cli verifymessage "$LEGACY" "$SIG" "$MSG"
+Expected output:
+
+Copy code
+true
+❌ If verification fails, do not submit yet.
+
+📤 Step 7 — Submit Verification
+Submit the following block exactly to the verification channel or via direct message:
+
+Copy code
+Node: <hostname OR IP>
+Address: <legacy address>
+Message: OBD_NODE_VERIFICATION: I operate node <hostname OR IP>
+Signature: <signature>
+❗ Common Issues
+“Address does not refer to key”
+Cause: Non-legacy address used
+✅ Fix: Generate the address using "legacy"
+
+Verification returns false
+Cause: Message mismatch
+✅ Fix: Copy/paste the message exactly as signed
+
+Node IP or hostname changed
+Cause: Node identity changed
+✅ Fix: Re-run verification with the new identifier
+
+🔒 Security Notes
+❌ Do not use an address holding funds
+
+✅ Use a dedicated identity-only address
+
+Wallet does not need to run on the node itself
+
+Message signing does not expose private keys
