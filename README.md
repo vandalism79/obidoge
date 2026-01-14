@@ -1,3 +1,91 @@
+==========
+
+ObiDoge Community-Funded Exchange Listing — Exbitron
+
+The ObiDoge project has the opportunity to pursue a paid exchange listing on Exbitron.
+
+The required listing fee is 500 USDT.
+
+The project will not use personal funds to cover this cost. Instead, we are opening a voluntary community funding effort to determine whether there is sufficient demand to proceed.
+
+What this is
+
+A voluntary community contribution
+
+Contributions are accepted only in USDT
+
+Funds are intended solely for the Exbitron listing fee
+
+The funding address is public and transparent
+
+What this is NOT
+
+❌ Not an investment
+
+❌ Not a presale
+
+❌ Not a promise of value, price, or liquidity
+
+❌ Not a guarantee of exchange approval or trading activity
+
+Important disclosures
+
+ObiDoge (OBD) currently has no established market value
+
+Contributing USDT does not entitle contributors to anything in return
+
+Exchange listings do not guarantee adoption or success
+
+Participation is entirely optional
+
+Funding details (READ CAREFULLY)
+
+Target: 500 USDT
+Purpose: Exbitron listing fee
+
+USDT Address (ERC-20 / Ethereum network ONLY):
+
+0xF8BdA87DCFB8D7652De291Ce751fEAEBa5Df5E2c
+
+
+⚠️ IMPORTANT
+
+ERC-20 network ONLY
+
+Do NOT send TRC-20, BEP-20, or any other network
+
+Sending on the wrong network will result in permanent loss
+
+What happens next
+
+If the 500 USDT goal is reached, the project will submit the listing fee to Exbitron and publish confirmation
+
+If the goal is not reached, an update will be provided with next steps consistent with transparency and community input
+
+No timelines or outcomes are guaranteed
+
+Why we’re doing this
+
+Exchange listings should reflect real community demand, not founder risk or speculation.
+
+This approach allows the community to decide whether pursuing this listing makes sense at this stage.
+
+Status
+
+Funding: Open
+
+Exchange: Exbitron
+
+Founder funds used: None
+
+Network: ERC-20 (Ethereum)
+
+Updates will be shared publicly.
+
+Wallet Balance
+https://etherscan.io/token/0xF8BdA87DCFB8D7652De291Ce751fEAEBa5Df5E2c
+
+============
 ObiDoge Core
 ============
 
