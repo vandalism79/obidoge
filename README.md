@@ -45,7 +45,7 @@ Purpose: Exbitron listing fee
 
 USDT Address (ERC-20 / Ethereum network ONLY):
 
-0xF8BdA87DCFB8D7652De291Ce751fEAEBa5Df5E2c
+0xda2Dc86FF179e8DaE7c6d2cc0d0c0D6F310583dD
 
 
 ⚠️ IMPORTANT
@@ -83,7 +83,7 @@ Network: ERC-20 (Ethereum)
 Updates will be shared publicly.
 
 Wallet Balance
-https://etherscan.io/token/0xF8BdA87DCFB8D7652De291Ce751fEAEBa5Df5E2c
+https://eth.tokenview.io/en/address/0xda2Dc86FF179e8DaE7c6d2cc0d0c0D6F310583dD
 
 ============
 
