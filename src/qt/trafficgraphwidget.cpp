@@ -3,6 +3,8 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include <qt/trafficgraphwidget.h>
+
+#include <QPainterPath>
 #include <qt/clientmodel.h>
 
 #include <QPainter>

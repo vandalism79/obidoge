@@ -226,6 +226,9 @@ LogPrintStr(strprintf("MAINNET genesis merkle=%s\n", genesis.hashMerkleRoot.ToSt
 // assert(genesis.hashMerkleRoot == uint256S("0x..."));
 // Note that of those with the service bits flag, most only support a subset of possible options
         // === DNS Seeds (Mainnet) ===
+        // Keep DNS seeds if you want, but DO NOT rely on them exclusively.
+        // If DNS returns 0 (common on brand-new networks), vFixedSeeds MUST be populated
+        // so fresh wallets can connect without reminding users to edit obidoge.conf.
         vSeeds.clear();
         vSeeds.emplace_back("seed1.obidoge.xyz", "seed1.obidoge.xyz");
         vSeeds.emplace_back("seed2.obidoge.xyz", "seed2.obidoge.xyz");
@@ -240,7 +243,18 @@ LogPrintStr(strprintf("MAINNET genesis merkle=%s\n", genesis.hashMerkleRoot.ToSt
 
         bech32_hrp = "obd";
 
-        vFixedSeeds.clear();
+                // === Fixed Seeds (Mainnet) ===
+        // These are hard-coded "last resort" peers. They are only used if DNS seeding yields no addrs.
+        // IMPORTANT: Keep these as stable, long-lived nodes with port 29445 open.
+        vFixedSeeds = {
+            // 162.196.40.170:29445
+            {{0,0,0,0,0,0,0,0,0,0,0xff,0xff,162,196,40,170}, 29445},
+            // 99.144.175.120:29445
+            {{0,0,0,0,0,0,0,0,0,0,0xff,0xff, 99,144,175,120}, 29445},
+            // 80.80.109.43:29445
+            {{0,0,0,0,0,0,0,0,0,0,0xff,0xff, 80, 80,109, 43}, 29445},
+        };
+
 
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;

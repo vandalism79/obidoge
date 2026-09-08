@@ -1,39 +1,23 @@
-# Installing ObiDoge
+# Installing ObiDoge 0.16.5.0
 
-This document describes basic installation steps for running ObiDoge wallets and nodes.
+Get binaries and checksums from [GitHub Releases](https://github.com/vandalism79/obidoge/releases). Back up an existing wallet before upgrading and stop the old wallet/node cleanly before replacing its executable.
 
-## Linux (Prebuilt Package — Recommended)
+## Linux x86-64
 
-1. Download the Linux package from the official GitHub Releases page.
-2. Extract the archive:
-3. Copy `obidoge.conf.example` to `obidoge.conf` and adjust settings as needed.
-4. Start the daemon:
-5. The daemon exposes standard JSON-RPC once running.
+Extract `obd-0.16.5.0-linux-x86_64.tar.gz` and keep its folders together. Run `bin/obidoge-qt` for the wallet. The `bin` folder also contains `obidoged`, `obidoge-cli`, and `obidoge-tx`. Always use these launchers so the packaged libraries are selected.
 
-This package includes:
-- Daemon (`obidoged`)
-- CLI (`obidoge-cli`, `obidoge-tx`)
-- Qt wallet
+One package was tested on Ubuntu 18.04, 22.04, and 24.04. A graphical session with X11 or XWayland and system OpenGL dispatch libraries is required for the GUI. Other distributions and native modern-kernel boots were not separately verified.
 
-## Windows (Qt Wallet)
+## Windows x86-64
 
-1. Download the Windows Qt Wallet ZIP from GitHub Releases.
-2. Extract the archive.
-3. Run the Qt wallet executable.
-4. The wallet will create its data directory automatically on first launch.
+Run `ObiDoge-0.16.5.0-win64.exe`, or extract the full ZIP and run `obidoge-qt.exe`. The executable is portable and does not need additional third-party DLLs. It was tested on Windows 11 and is unsigned.
 
-## Building from Source (Advanced)
+## Existing data and verification
 
-Building from source is intended for developers and advanced users.
+Keep your existing data directory and wallet. Do not delete chain data or create a new wallet as part of a routine executable upgrade. The application does not automatically install over a running node.
 
-- ObiDoge is based on the Bitcoin Core 0.16 codebase.
-- Berkeley DB **4.8** is required for wallet functionality when building from source.
-- Standard build dependencies (Boost, OpenSSL, Qt for GUI builds) are required.
+Compare each download's SHA-256 with the release `SHA256SUMS`. On Linux use `sha256sum`; on Windows PowerShell use `Get-FileHash -Algorithm SHA256`.
 
-Refer to the source repository for detailed build instructions.
+## Developers
 
-## Downloads
-
-Official downloads and checksums are available at:
-https://github.com/vandalism79/obidoge/releases
-
+Read the [Ubuntu](build-ubuntu-compat.md) or [Windows](build-windows.md) build guide. Source archives and corresponding dependency sources accompany the binaries. The release notes distinguish completed compatibility checks from the inherited test-suite limitation.

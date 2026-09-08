@@ -1,0 +1,17 @@
+# Keep source scripts usable on Unix after a Windows checkout.
+* text=auto eol=lf
+*.sh text eol=lf
+*.py text eol=lf
+*.am text eol=lf
+*.ac text eol=lf
+*.mk text eol=lf
+autogen.sh text eol=lf
+depends/Makefile text eol=lf
+src/leveldb/Makefile text eol=lf
+*.png binary
+*.jpg binary
+*.ico binary
+*.icns binary
+*.pdf binary
+*.ttf binary
+*.woff binary
